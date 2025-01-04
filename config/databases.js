@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
     try {
         await mongoose.connect(
-            'mongodb+srv://Menuka:Me12nu34@slceylon.4phpx.mongodb.net/ceylonwayDb?retryWrites=true&w=majority&appName=slceylon'
+            process.env.MONGO_URL
         );
         console.log('MongoDB connected successfully!');
     } catch (error) {
