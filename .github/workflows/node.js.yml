@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]  # Specify Node.js version(s)
+        node-version: [19.x]  # Specify Node.js version(s)
 
     steps:
       - name: Checkout code
