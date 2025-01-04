@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'  # Enable dependency caching
 
       - name: Install dependencies
-        run: npm ci  # Run without sudo
+        run: sudo npm ci  # Run without sudo
 
       - name: Build project
         run: npm run build --if-present
