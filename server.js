@@ -3,9 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/databases');
 const userRoutes = require('./routes/userRoutes');
-const categoryRoutes = require('./routes/categoryRoute');
-const productRoutes = require('./routes/productRoute');
-const checkoutRoutes = require('./routes/checkoutRoute');
+const appointmentRoute = require('./routes/appointmentRoute');
 
 dotenv.config(); 
 connectDB(); 
@@ -17,9 +15,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/user', userRoutes);
-app.use('/api/category', categoryRoutes);
-app.use('/api/product', productRoutes);
-app.use('/api/checkout', checkoutRoutes);
+app.use('/api/appointment', appointmentRoute);
 
 
 app.use((req, res, next) => {
