@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const appointSchema = new mongoose.Schema(
+const studentSchema = new mongoose.Schema(
   {
-    doctorName: {
+    studentName: {
       type: String,
       required: true,
     },
@@ -10,35 +10,27 @@ const appointSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    appoint_date: {
+    create_date: {
       type: String, 
       required: true,
     },
-    appoint_time: {
+    create_time: {
       type: String,
       required: true,
     },
-    type: {
+    grade: {
       type: String,
       required: true,
-      enum: ["online", "offline"], 
     },
-    des: {
+    age: {
       type: String,
       required: true,
     },
     is_delete: {
       type: Boolean,
       default: false, 
-    },
-    is_approve: {
-      type: Boolean,
-      default: true, 
-    },
-  },
-  {
-    timestamps: true, 
+    }
   }
 );
 
-module.exports = mongoose.model("Appointment", appointSchema);
+module.exports = mongoose.model("Student", studentSchema);

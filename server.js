@@ -3,7 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/databases');
 const userRoutes = require('./routes/userRoutes');
-const appointmentRoute = require('./routes/appointmentRoute');
+const studentRoute = require('./routes/studentRoute');
 
 dotenv.config(); 
 connectDB(); 
@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/user', userRoutes);
-app.use('/api/appointment', appointmentRoute);
+app.use('/api/student', studentRoute);
 
 
 app.use((req, res, next) => {

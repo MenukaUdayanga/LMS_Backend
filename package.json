@@ -1,5 +1,5 @@
 {
-  "name": "sl_ceylonway_backend",
+  "name": "student_management_systems",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
