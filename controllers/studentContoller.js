@@ -24,7 +24,6 @@ exports.addStudent = async (req, res) => {
         return res.status(400).json({ message: 'All fields are required!' });
       }
   
-      // Here we ensure is_delete defaults to false if not provided in the request body
       const student = new Student({
         studentName,
         usersId,

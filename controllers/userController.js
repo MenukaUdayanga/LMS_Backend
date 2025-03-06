@@ -76,17 +76,15 @@ try{
     return res.status(404).json({ message: 'User not found!' });
   }
 
-  // Compare the provided password with the hashed password in the database
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid email or password!' });
     }
 
-    // Generate a JWT token
+ 
     const token = jwt.sign(
       { id: user._id, email: user.email },
       process.env.JWT_SECRET, 
-      // { expiresIn: '1h' } 
     );
 
     res.status(200).json({
@@ -164,7 +162,7 @@ exports.resetPassword = async (req, res) => {
   const { password } = req.body;
 
   try {
-    // Verify the token
+   
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     const user = await User.findById(decoded.id);
@@ -173,13 +171,13 @@ exports.resetPassword = async (req, res) => {
       return res.status(404).json({ message: "Invalid token or user not found" });
     }
 
-    // Hash the new password
+   
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
     user.password = hashedPassword;
 
-    // Save the updated user to the database
+    
     await user.save();
 
     return res.status(200).json({
